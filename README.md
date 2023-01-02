@@ -1,6 +1,6 @@
 # **Todo-list-Application**
 
- ***Todo-list-Application*** Developed persistent todo application with CRUD operations to track list of tasks
+ ***Todo-list-Application:*** Developed persistent todo application with CRUD operations to track list of tasks
 
  - Displayed list of todos with HTML list elements, styled todo list using CSS, Bootstrap
  
