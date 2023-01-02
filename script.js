@@ -14,7 +14,7 @@ function getTodoListFromLocalStorage() {
 
 let todoList = getTodoListFromLocalStorage();
 
-let saveTodo = function() {
+let saveTodo = function () {
     localStorage.setItem("todoList", JSON.stringify(todoList));
 };
 
@@ -25,7 +25,7 @@ function onTodoStatusChange(checkboxId, labelId, todoId) {
     let labelElement = document.getElementById(labelId);
     labelElement.classList.toggle("checked");
 
-    let todoObjectIndex = todoList.findIndex(function(eachTodo) {
+    let todoObjectIndex = todoList.findIndex(function (eachTodo) {
         let eachTodoId = "todo" + eachTodo.uniqueNo;
         if (eachTodoId === todoId) {
             return true;
@@ -45,7 +45,7 @@ function onTodoStatusChange(checkboxId, labelId, todoId) {
 function onDeleteTodo(todoId) {
     let todoElement = document.getElementById(todoId);
     todoItemsContainer.removeChild(todoElement);
-    let deleteIndex = todoList.findIndex(function(eachTodo) {
+    let deleteIndex = todoList.findIndex(function (eachTodo) {
         let eachTodoId = "todo" + eachTodo.uniqueNo;
         if (eachTodoId === todoId) {
             return true;
@@ -72,7 +72,7 @@ function createAndAppendTodo(todo) {
     inputElement.id = checkboxId;
     inputElement.checked = todo.isChecked;
 
-    inputElement.onclick = function() {
+    inputElement.onclick = function () {
         onTodoStatusChange(checkboxId, labelId, todoId);
         saveTodo();
     };
@@ -101,7 +101,7 @@ function createAndAppendTodo(todo) {
     let deleteIcon = document.createElement("i");
     deleteIcon.classList.add("far", "fa-trash-alt", "delete-icon");
 
-    deleteIcon.onclick = function() {
+    deleteIcon.onclick = function () {
         onDeleteTodo(todoId);
         saveTodo();
     };
@@ -135,7 +135,7 @@ function onAddTodo() {
     userInputElement.value = "";
 }
 
-addTodoButton.onclick = function() {
+addTodoButton.onclick = function () {
     onAddTodo();
     saveTodo();
 };
